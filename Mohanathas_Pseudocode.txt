@@ -1,0 +1,68 @@
+1. A brief paragraph describing your experiment.
+
+PsychoPy will be used to program my experiment. This experiment is a computer task in which participants will be seated in a dark, sound-attenuated room 57cm from a monitor and stabilized using a chin-rest; to make sure their height relative to the monitor stays consistent throughout the experiment. Participants will be presented with 3 different conditions: a visual condition, a auditory condition and a audio-visual condition (the previous two conditions combined). The visual condition will contain a fixation point (presented for 10 ms) followed by a circle which will appear as a flash (presented for 10 ms), the auditory condition will contain a fixation point (presented for 10 ms) followed by a beep sound (presented for 10 ms) played through noise cancelling headphones and the audio-visual condition will be a fixation point (presented for 10 ms) followed by a flash and a beep presented simultaneously (presented for 10 ms). The visual flash will be presented at frequency of 100Hz and at a luminance of 55.8cd/m2 and the auditory beep will be white noise (noises that are made up of the same intensity with varying frequencies) presented at a pure tone of 500 Hz and a decibel sound pressure level of 72. The inter-stimulus interval {ISI, the time between the presentation of a fixation point for 10 ms and the stimulus (flash, beep or both) for 10 ms} will be randomized from 0-300ms. Participants will be asked to press the space-bar as fast as they can, in order to record their response times. There will be a 7 second window for participants to respond, if they do not respond in this timeframe then their response will be recorded as “no response=0” and automatically proceed to the next trial, if they do respond in this timeframe then their response will be recorded as “response=1.” In both cases the participant’s response time (the time it takes from the start of the trial to when the student presses down on the space-bar) will be recorded. All three conditions will be presented in a randomized order twice (two visual conditions, two auditory conditions and two audio-visual conditions) with 5 practice trials and 45 target trials per condition (total of 50 trials) for a total of about 10 minutes, with breaks in between each condition when needed. The practice trials are to ensure that the students understand the task and have the opportunity to make mistakes and ask questions. The main interest here are the 45 target tasks per condition. Any response times less then 150ms or greater then 3000ms will be excluded during analyses, because a response less then 150ms is an anticipatory response (it is not humanely possible to respond this quick) and a response above 3000ms might indicate that the student was tired and/or not paying attention. Also, all “no responses” (e.g., if they didn’t press the space-bar in the 7 second window) will be excluded from the data. I hypothesize that participants will have the fastest reaction times in the audio-visual condition compared to the visual-only or auditory-only condition because, previous literature has supported that presenting redundant information is often more helpful then presenting information through one modality (e.g., visual-only or auditory-only). The purpose of this experiment is to allow elementary and high school students to engage in a simple STEM-related study, in order to create interest in pursuing career paths in science. 
+
+2. Pseudocode detailing the hierarchy of your experiment. 
+
+-Instructions presented on the monitor: 
+
+Visual Condition: 
+
+“On each trial, you will see a fixation point followed by a white circle on the screen. Your task is to keep your eyes on the fixation point and press the space-bar as quickly as you can, when you see the white circle. We are interested in your response time, therefore please respond as quickly and as accurately as possible. If you are unsure please take your best guess. Place the index finger on your right hand on the space-bar and press the space-bar when you are ready to continue.”
+
+Auditory Condition: 
+
+“On each trial, you will see a fixation point followed by a beep sound presented through the headphones. Your task is to keep your eyes on the fixation point and press the space-bar as quickly as you can, when you hear the beep sound. We are interested in your response time, therefore please respond as quickly and as accurately as possible. If you are unsure please take your best guess. Place the index finger on your right hand on the space-bar and press the space-bar when you are ready to continue.”
+
+Audio-visual Condition: 
+
+“On each trail you will see a fixation point followed by a white circle on the screen and hear a beep sound through the headphones presented at the same time. Your task is to keep your eyes on the fixation point and press the space-bar as quickly as you can, when you see the white circle and hear the beep sound. We are interested in your response time, therefore please respond as quickly and as accurately as possible. If you are unsure please take your best guess. Place the index finger on your right hand on the space-bar and press the space-bar when you are ready to continue.” 
+
+Loops:
+-There will be three separate loops (one for each condition) responsible for each stimulus presentation. 
+-In order to do this a routine can be used to specify each event timing and the instructions per condition. Since you will need multiple routines (one per condition) I can place all routines into a flow to demonstrate how these routines will repeat and the order of each routine (helps with counterbalancing conditions) to ensure that the three conditions are shown in a randomized order for each participant.
+
+Experiment: Visual Condition:
+
+-Fixation Point (presented for 10 ms)
+-ISI: 0-300ms
+-Visual stimulus: a flash is presented for 10 ms
+-Response by participant: Waiting for the participant’s responds (7 second window, recorded as 1= response or 0 = no response along with the response time duration)
+-Fixation point and Visual stimulus repeat for a total of 50 trials 
+-Break: “Take a break, press the space-bar when you are ready to continue to the next condition. Thank you!”
+-The next condition is presented: auditory or audio-visual (done by the loop)
+
+Experiment: Auditory Condition:
+
+-Fixation Point (presented for 10 ms)
+-ISI: 0-300ms
+-Auditory stimulus: a beep is presented for 10 ms
+-Response by participant: Waiting for the participant’s responds (7 second window, recorded as 1= response or 0 = no response along with the response time duration)
+-Fixation point and Auditory stimulus repeat for a total of 50 trials
+-Break: “Take a break, press the space-bar when you are ready to continue to the next condition. Thank you!”
+-The next condition is presented: visual or audio-visual (done by the loop)
+
+Experiment: Audio-Visual Condition:
+
+-Fixation Point (presented for 10 ms)
+-ISI: 0-300ms
+-Audio-Visual stimulus: A flash and a beep presented at the same time
+-Response by participant: Waiting for the participant’s responds (7 second window, recorded as 1= response or 0 = no response along with the response time duration)
+-Fixation point and Audio-visual stimulus repeat for a total of 50 trials 
+-Break: “Take a break, press the space-bar when you are ready to continue to the next condition. Thank you!”
+The next condition is presented: visual or auditory (done by the loop)
+
+-All conditions occur two times in a randomized order
+-After all 6 conditions the instructions will say: “Finished, thank you for participating.”
+
+
+
+
+
+
+
+
+
+
+
+
